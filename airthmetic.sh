@@ -1,11 +1,11 @@
 #!/bin/bash -x
 
-function descendingSort(){
+function ascendingSort(){
 	for((k = 0; k < 5; k++))
 	do
 		for((j = 0; j < 5; j++))
 		do
-			if [ ${arr[$k]} -gt ${arr[$j]} ];
+			if [ ${arr[$k]} -lt ${arr[$j]} ];
 			then
 					temp=${arr[$k]}
 					arr[$k]=${arr[$j]}
@@ -13,7 +13,7 @@ function descendingSort(){
 			fi
 	 	done
 	done
-	echo "Sorted array in descending order is " ${arr[@]}
+	echo "Sorted array in ascending order is " ${arr[@]}
 	}
 
 
@@ -42,4 +42,4 @@ do
 done
 echo ${arr[@]}
 
-descendingSort
+ascendingSort
