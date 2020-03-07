@@ -1,5 +1,22 @@
 #!/bin/bash -x
 
+function descendingSort(){
+	for((k = 0; k < 5; k++))
+	do
+		for((j = 0; j < 5; j++))
+		do
+			if [ ${arr[$k]} -gt ${arr[$j]} ];
+			then
+					temp=${arr[$k]}
+					arr[$k]=${arr[$j]}
+					arr[$j]=$temp
+			fi
+	 	done
+	done
+	echo "Sorted array in descending order is " ${arr[@]}
+	}
+
+
 declare -A dict
 declare -a arr
 
@@ -24,3 +41,5 @@ do
 	arr[i]=${dict[$i]}
 done
 echo ${arr[@]}
+
+descendingSort
